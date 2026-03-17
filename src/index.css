@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "DM Sans", sans-serif;
+  
+  --color-raro-cream: #FAF7F2;
+  --color-raro-charcoal: #1C1C1C;
+  --color-raro-terracotta: #C4714A;
+  --color-raro-sage: #8A9E85;
+  --color-raro-gold: #C9A87C;
+}
+
+@layer base {
+  body {
+    @apply bg-raro-cream text-raro-charcoal font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.asymmetric-overlap {
+  position: relative;
+}
+
+.asymmetric-overlap img {
+  z-index: 1;
+}
+
+.asymmetric-overlap .text-box {
+  z-index: 2;
+  @apply bg-raro-cream p-8 md:p-12 shadow-xl;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #C4714A;
+}
